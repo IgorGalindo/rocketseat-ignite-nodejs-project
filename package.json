@@ -1,0 +1,17 @@
+{
+  "name": "rocketseat-ignite-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/IgorGalindo/rocketseat-ignite-nodejs-project.git",
+  "author": "Igor Galindo <igorgalindodev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
