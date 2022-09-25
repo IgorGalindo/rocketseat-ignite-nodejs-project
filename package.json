@@ -6,7 +6,9 @@
   "author": "Igor Galindo <igorgalindodev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+    "dev": "tsnd --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "create-container-docker": "docker build -t rentx .",
+    "run-container-docker": "docker run -p 3333:3333 rentx"
   },
   "dependencies": {
     "@types/csv-parse": "^1.2.2",
