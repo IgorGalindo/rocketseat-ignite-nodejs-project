@@ -11,16 +11,10 @@ class AuthenticateUserController {
             AuthenticateUserUseCase
         );
 
-        let token;
-
-        try {
-            token = await authenticateUserUseCase.execute({
-                email,
-                password,
-            });
-        } catch (error) {
-            return response.status(401).json({ error: error.message });
-        }
+        const token = await authenticateUserUseCase.execute({
+            email,
+            password,
+        });
 
         return response.status(200).json(token);
     }
