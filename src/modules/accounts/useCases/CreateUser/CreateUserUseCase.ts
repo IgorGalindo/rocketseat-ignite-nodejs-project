@@ -27,13 +27,24 @@ class CreateUserUseCase {
 
         const passwordHash = await hash(password, 8);
 
-        const user = await this.usersRepository.create({
+        const userCreated = await this.usersRepository.create({
             name,
             password: passwordHash,
             email,
             driver_license,
         });
 
+        const user = {
+            id: userCreated.id,
+            name: userCreated.name,
+            email: userCreated.email,
+            driver_license: userCreated.driver_license,
+            isAdmin: userCreated.isAdmin,
+            avatar: userCreated.avatar,
+            created_at: userCreated.created_at,
+            password: userCreated.password,
+        };
+        delete user.avatar;
         delete user.password;
 
         return user;
